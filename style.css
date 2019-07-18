@@ -1,0 +1,27 @@
+body{
+    background:linear-gradient(120deg,rgb(240, 112, 112),rgb(245, 3, 44));
+}
+.timer{
+    color:brown;
+    background:ghostwhite;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius:10px;
+    padding-left:10px;
+    width:550px;
+    height:500p;
+}
+p,h1{
+    text-align:center;
+}
+.second,.third{
+    font-size:25px;
+}
+h1{
+    font-size:40px;
+}
+p{
+  font-size:35px;
+}

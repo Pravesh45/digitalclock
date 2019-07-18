@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="timer">
+    <h1>Digital Clock</h1>
+    <br>
+    <p class="second">05 : 45 : 21</p>
+    <p class="third">Hrs  Min  Sec</p>
+    </div>
+    <script type="text/javascript">
+    var time=new Date();
+    var h=time.getHours();
+    var m=time.getMinutes();
+    var s=time.getSeconds();
+    function clock()
+    {s=s+1;
+     if(s>=60)
+     {
+         m+=1;
+         s=0;
+     }
+     if(m>=60)
+     {
+         h+=1;
+         m=0;
+     }
+     if(h>=12)
+     {
+         h=0;
+     }
+     var x=document.getElementsByClassName("second");
+     if(h<10)
+     {
+     x[0].innerText="0"+h+" :"+m+" :"+s;
+     if(s<10)
+     {
+        x[0].innerText="0"+h+" :"+m+" :"+"0"+s;
+        if(m<10)
+        x[0].innerText="0"+h+" :"+"0"+m+" :"+"0"+s;
+     }
+     else
+     if(m<10)
+      x[0].innerText="0"+h+" :"+"0"+m+" :"+s;
+     }
+     else
+     if(m<10)
+     {
+        x[0].innerText=h+" :"+"0"+m+" :"+s;
+        if(s<10)
+        x[0].innerText=h+" :"+"0"+m+" :"+"0"+s;
+     }
+     else
+     if(s<10)
+     x[0].innerText=h+" :"+m+" :"+"0"+s;
+     else
+     x[0].innerText=h+" :"+m+" :"+s;
+     setTimeout(clock,1000);
+    }
+    clock();
+    </script>
+</body>
+</html>
